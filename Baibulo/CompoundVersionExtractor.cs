@@ -14,7 +14,7 @@ namespace Baibulo {
             return extractors
                 .Select(extractor => extractor.extractVersionFromRequest(request))
                 .Where(version => version != null)
-                .First();
+                .FirstOrDefault();
         }
     }
 }
