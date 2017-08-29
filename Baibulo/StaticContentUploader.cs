@@ -26,7 +26,7 @@ namespace Baibulo {
         }
 
         private static void SaveContentToFile(Stream source, string path, string version) {
-            var file = File.Create(path + "/" + version, 4096, FileOptions.WriteThrough);
+            var file = File.Create(path + "/" + version);
             source.CopyTo(file);
             file.Close();
         }

@@ -1,7 +1,4 @@
-﻿using System.Collections.Specialized;
-using System.IO;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 
 namespace Baibulo {
     public partial class StaticContentRetriever: IHttpHandler {

@@ -42,12 +42,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\baibulo\baibulo.csproj">
-      <Project>{27D23665-4129-464C-A80D-C1813803D659}</Project>
-      <Name>Baibulo</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>

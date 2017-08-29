@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{27D23665-4129-464C-A80D-C1813803D659}</ProjectGuid>
+    <ProjectGuid>{6D813B64-A2FE-4A0B-AEB0-8A1DF958B47C}</ProjectGuid>
     <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>baibulo</RootNamespace>
-    <AssemblyName>baibulo</AssemblyName>
+    <RootNamespace>Baibulo.Web</RootNamespace>
+    <AssemblyName>Baibulo.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -42,28 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
-    <Content Include="Global.asax" />
-    <Content Include="StaticContentRetriever.ashx" />
-    <Content Include="StaticContentUploader.ashx" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="StaticContentRetriever.ashx.cs">
-      <DependentUpon>StaticContentRetriever.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="StaticContentUploader.ashx.cs">
-      <DependentUpon>StaticContentUploader.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="IVersionExtractor.cs" />
-    <Compile Include="QueryStringVersionExtractor.cs" />
-    <Compile Include="VersionHeaderVersionExtractor.cs" />
-    <Compile Include="RefererHeaderVersionExtractor.cs" />
-    <Compile Include="ReleaseVersionExtractor.cs" />
-    <Compile Include="CompoundVersionExtractor.cs" />
-    <Compile Include="ResourceManager.cs" />
-  </ItemGroup>
+  <Import Project="..\Baibulo\Baibulo.projitems" Label="Shared" Condition="Exists('..\Baibulo\Baibulo.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>
