@@ -31,8 +31,11 @@ namespace Baibulo {
         private static void SaveContentToFile(Stream source, string path, string version) {
             Directory.CreateDirectory(path);
             var file = File.Create(path + "/" + version);
-            source.CopyTo(file);
-            file.Close();
+            try {
+                source.CopyTo(file);
+            } finally {
+                file.Close();
+            }
         }
 
         private void SendNoVersionSpecifiedError(HttpResponse response) {
