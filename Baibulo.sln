@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baibulo", "Baibulo\Baibulo.csproj", "{27D23665-4129-464C-A80D-C1813803D659}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baibulo.Tests", "Baibulo.Tests\Baibulo.Tests.csproj", "{BCA8A493-B4E5-4D50-9265-0985623B201F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27D23665-4129-464C-A80D-C1813803D659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D23665-4129-464C-A80D-C1813803D659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D23665-4129-464C-A80D-C1813803D659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D23665-4129-464C-A80D-C1813803D659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCA8A493-B4E5-4D50-9265-0985623B201F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCA8A493-B4E5-4D50-9265-0985623B201F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCA8A493-B4E5-4D50-9265-0985623B201F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCA8A493-B4E5-4D50-9265-0985623B201F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
