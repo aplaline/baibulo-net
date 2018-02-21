@@ -23,8 +23,12 @@ namespace Baibulo {
             if (version == null) {
                 SendNoVersionSpecifiedError(context.Response);
             } else {
-                SaveContentToFile(context.Request.InputStream, path, version);
-                SendResponseOK(context.Response, path, version);
+                try {
+                  SaveContentToFile(context.Request.InputStream, path, version);
+                  SendResponseOK(context.Response, path, version);
+                } catch (Exception e) {
+                  SendErrorWhileUploadingError(context.Response, e.Message);
+                }
             }
         }
 
@@ -41,6 +45,11 @@ namespace Baibulo {
         private void SendNoVersionSpecifiedError(HttpResponse response) {
             response.StatusCode = 400;
             response.Write("No version specified\n");
+        }
+
+        private void SendErrorWhileUploadingError(HttpResponse response, string message) {
+            response.StatusCode = 400;
+            response.Write("Error while uploading: " + message + "\n");
         }
 
         private void SendResponseOK(HttpResponse response, string path, string version) {
