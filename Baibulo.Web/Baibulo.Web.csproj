@@ -45,7 +45,12 @@
     <Content Include="Web.config" />
     <Content Include="assets\Web.config" />
   </ItemGroup>
-  <Import Project="..\Baibulo\Baibulo.projitems" Label="Shared" Condition="Exists('..\Baibulo\Baibulo.projitems')" />
+  <ItemGroup>
+    <ProjectReference Include="..\Baibulo\Baibulo.csproj">
+      <Project>{2184AA04-2EF4-4D17-9F54-106C18894CAB}</Project>
+      <Name>Baibulo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>
