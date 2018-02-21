@@ -39,9 +39,11 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="assets\Web.config" />
   </ItemGroup>
   <Import Project="..\Baibulo\Baibulo.projitems" Label="Shared" Condition="Exists('..\Baibulo\Baibulo.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
