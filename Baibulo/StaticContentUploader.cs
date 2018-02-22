@@ -2,6 +2,8 @@
 using System.IO;
 using System.Web;
 
+using log4net;
+
 //
 // Example usage using cURL:
 //
@@ -10,7 +12,11 @@ using System.Web;
 
 namespace Baibulo {
     public class StaticContentUploader: IHttpHandler {
-        public bool IsReusable => true;
+        private static readonly ILog log = LogManager.GetLogger(typeof(StaticContentUploader));
+
+        public bool IsReusable {
+            get { return true; }
+        }
 
         private static readonly ResourceManager manager = new ResourceManager(new CompoundVersionExtractor(
             new QueryStringVersionExtractor(),
@@ -20,14 +26,17 @@ namespace Baibulo {
         public void ProcessRequest(HttpContext context) {
             var path = manager.GetRequestedPath(context.Request);
             var version = manager.GetRequestedVersion(context.Request);
+            log.Info("Processing " + path + " in version " + version);
             if (version == null) {
                 SendNoVersionSpecifiedError(context.Response);
             } else {
                 try {
-                  SaveContentToFile(context.Request.InputStream, path, version);
-                  SendResponseOK(context.Response, path, version);
+                    SaveContentToFile(context.Request.InputStream, path, version);
+                    SendResponseOK(context.Response, path, version);
+                    log.Info("Processing " + path + " in version " + version + " completed");
                 } catch (Exception e) {
-                  SendErrorWhileUploadingError(context.Response, e.Message);
+                    log.Info("Error while processing " + path + " in version " + version + ": " + e.Message);
+                    SendErrorWhileUploadingError(context.Response, e.Message);
                 }
             }
         }

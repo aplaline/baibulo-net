@@ -40,10 +40,15 @@
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="assets\Web.config" />
+    <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Baibulo\Baibulo.csproj">
@@ -53,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Empty.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
