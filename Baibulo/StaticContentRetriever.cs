@@ -14,6 +14,7 @@ namespace Baibulo {
             new QueryStringVersionExtractor(),
             new VersionHeaderVersionExtractor(),
             new RefererHeaderVersionExtractor(),
+            new CookieVersionExtractor(),
             new ReleaseVersionExtractor()
         ));
 
@@ -22,6 +23,7 @@ namespace Baibulo {
             var version = manager.GetRequestedVersion(context.Request);
             log.Info("Processing " + path + " in version " + version);
             if (manager.ResourceExistsInVersion(path, version)) {
+                context.Response.SetCookie(new HttpCookie("Version") { Value = version });
                 SendResourceInVersion(context.Response, path, version);
                 log.Info("Processing completed");
             } else {

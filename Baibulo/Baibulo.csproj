@@ -63,6 +63,7 @@
     <Compile Include="VersionHeaderVersionExtractor.cs">
       <Link>VersionHeaderVersionExtractor.cs</Link>
     </Compile>
+    <Compile Include="CookieVersionRetriever.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
