@@ -23,7 +23,7 @@ namespace Baibulo {
             var version = manager.GetRequestedVersion(context.Request);
             log.Info("Processing " + path + " in version " + version);
             if (manager.ResourceExistsInVersion(path, version)) {
-                context.Response.SetCookie(new HttpCookie("Version") { Value = version });
+                CookieVersionExtractor.SetVersionCookie(context.Response, version);
                 SendResourceInVersion(context.Response, path, version);
                 log.Info("Processing completed");
             } else {
