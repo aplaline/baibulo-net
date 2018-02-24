@@ -11,7 +11,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>baibulo-net</PackageId>
-    <PackageVersion>1.0.2</PackageVersion>
+    <PackageVersion>1.0.4</PackageVersion>
     <Authors>Matthias Hryniszak</Authors>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0.txt</PackageLicenseUrl>
