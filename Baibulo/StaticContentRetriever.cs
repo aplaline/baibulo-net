@@ -27,8 +27,8 @@ namespace Baibulo {
                 SendResourceInVersion(context.Response, path, version);
                 log.Info("Processing completed");
             } else {
-                SendResourceNotFound(context.Response);
                 log.Info("Requested resource not found");
+                SendResourceNotFound(context.Response);
             }
         }
 
