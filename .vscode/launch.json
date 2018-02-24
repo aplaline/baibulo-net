@@ -9,7 +9,8 @@
       "type": "mono",
       "request": "attach",
       "address": "localhost",
-      "port": 55555
+      "port": 55555,
+      "preLaunchTask": "debug"
     }
   ]
 }
