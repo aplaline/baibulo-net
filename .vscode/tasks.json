@@ -1,0 +1,44 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "msbuild",
+      "args": [
+        // Ask msbuild to generate full paths for file names.
+        "/property:GenerateFullPaths=true",
+        "/t:build"
+      ],
+      "group": "build",
+      "presentation": {
+        // Reveal the output only if unrecognized errors occur.
+        "reveal": "silent"
+      },
+      // Use the standard MS compiler pattern to detect errors, warnings and infos
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "debug",
+      "type": "shell",
+      "command": "xsp4 --port 8080",
+      "dependsOn": [ "build" ],
+      "options": {
+        "cwd": "${workspaceFolder}/Baibulo.Web",
+        "env": {
+          // Use managed watcher
+          "MONO_MANAGED_WATCHER": "y",
+          // Set Mono options to enable debugging via socket
+          "MONO_OPTIONS": "--debug --debugger-agent=transport=dt_socket,server=y,suspend=n,address=127.0.0.1:55555"
+        },
+      },
+      "presentation": {
+        // Reveal the output only if unrecognized errors occur.
+        "reveal": "silent"
+      },
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}
