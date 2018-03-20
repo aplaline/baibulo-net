@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+
+<configuration>
+  <appSettings>
+    <add key="baibulo-root" value="C:/tmp/"/>
+  </appSettings>
+  <system.webServer>
+    <handlers>
+      <add name="baibulo-get" verb="GET" path="*" type="Baibulo.StaticContentRetriever" />
+      <add name="baibulo-put" verb="PUT" path="*" type="Baibulo.StaticContentUploader" />
+    </handlers>
+  </system.webServer>
+</configuration>
