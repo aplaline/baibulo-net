@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata minClientVersion="">
+    <id>baibulo-net</id>
+    <version>1.0.4</version>
+    <title></title>
+    <authors>Matthias Hryniszak</authors>
+    <owners>Matthias Hryniszak</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0.txt</licenseUrl>
+    <projectUrl>https://github.com/aplaline/baibulo-net</projectUrl>
+    <description>Versioned static content server. Requires log4net.</description>
+    <summary></summary>
+    <releaseNotes></releaseNotes>
+    <copyright></copyright>
+    <language>en</language>
+    <tags></tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="log4net" version="2.0.8" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Web" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="bin/Release/Baibulo.dll" target="lib/net45/Baibulo.dll" />
+    <file src="bin/Release/Baibulo.pdb" target="lib/net45/Baibulo.pdb" />
+  </files>
+</package>
